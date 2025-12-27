@@ -11,30 +11,147 @@ body{
   height:100vh;
   background: linear-gradient(135deg, #1a1a1a, #000000);
   font-family: 'Gemunu Libre', sans-serif;
-  display:flex;
-  justify-content:center;
-  align-items:center;
   overflow:hidden;
   color:white;
 }
 .container{
   text-align:center;
   max-width:900px;
-  padding: 30px;
+  margin:auto;
+  padding:30px;
   background: rgba(0,0,0,0.6);
   border-radius:20px;
   box-shadow: 0 0 30px #ffcc00, 0 0 60px #ff0000;
+  position:relative;
+  top:50%;
+  transform: translateY(-50%);
 }
 h1{
-  font-size: 55px;
-  color: #FFD700;
-  margin-bottom: 20px;
-  text-shadow: 0 0 10px #FFD700, 0 0 20px #FF4500;
+  font-size:55px;
+  color:#FFD700;
+  margin-bottom:20px;
+  text-shadow:0 0 10px #FFD700,0 0 20px #FF4500;
   animation: glowText 2s infinite alternate;
 }
 p{
-  font-size: 20px;
+  font-size:20px;
   line-height:1.8;
+  text-align:justify;
+  color:#ffffff;
+  text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff;
+}
+#from-name{
+  font-size:26px;
+  font-weight:bold;
+  margin-top:20px;
+  text-shadow:0 0 10px #ff69b4,0 0 20px #00ffff,0 0 30px #ffff00;
+}
+.credit{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#00ffff;
+  text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff;
+  animation: glowFooter 2s infinite alternate;
+}
+.firework{
+  position:absolute;
+  width:6px;
+  height:6px;
+  animation: explode 1.5s infinite;
+}
+@keyframes glowText{
+  0%{text-shadow:0 0 10px #FFD700,0 0 20px #FF4500;}
+  50%{text-shadow:0 0 15px #00ffff,0 0 30px #ffff00;}
+  100%{text-shadow:0 0 20px #ff69b4,0 0 40px #00ff00;}
+}
+@keyframes glowFooter{
+  0%{ text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff; color:#00ffff;}
+  50%{ text-shadow:0 0 10px #ff69b4,0 0 20px #ffff00,0 0 30px #00ff00; color:#ff69b4;}
+  100%{ text-shadow:0 0 15px #ffcc00,0 0 30px #ff4500,0 0 40px #ffffff; color:#ffcc00;}
+}
+@keyframes explode{
+  0%{ box-shadow:none; }
+  100%{
+    box-shadow:
+    0 -120px red,
+    85px -85px yellow,
+    120px 0 cyan,
+    85px 85px lime,
+    0 120px magenta,
+    -85px 85px orange,
+    -120px 0 white,
+    -85px -85px pink;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎉 Happy New Year 2026 🎉</h1>
+  <p>
+    ✨ Assalamu Alaikum ITS Grouper সকল মেম্বারদের জানাই নতুন বছরের শুভেচ্ছা।<br>
+    🌟 নতুন বছর টা শুরু হওক সবার হাসি, খুশি, মায়া, মমতা আর ভালোবাসা দিয়ে।<br>
+    💖 আসুন আমরা সবাই একসাথে মিলেমিশে নতুন বছর টা শুরু করি।<br>
+    🎀 ITS গ্রুপের সবাইকে জানাই প্রাণভরা মায়া আর ভালোবাসা।<br>
+    📚 আমরা যেনো নতুন বছরে নতুন কিছু শিখতে পারি।
+  </p>
+  <div id="from-name">— ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽</div>
+</div>
+
+<div class="firework"></div>
+<div class="credit">CRATER BY DX JIBON</div>
+
+<audio id="bgMusic" loop>
+  <source src="yourSong.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Auto-play music hack
+window.addEventListener('load', function() {
+  const audio = document.getElementById('bgMusic');
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.then(_ => {
+      // Auto-play started
+    }).catch(error => {
+      // Browser blocked auto-play, wait for user interaction
+      console.log("Auto-play blocked, will play on first click or scroll.");
+      const startMusic = () => { audio.play(); window.removeEventListener('click', startMusic); window.removeEventListener('scroll', startMusic); };
+      window.addEventListener('click', startMusic);
+      window.addEventListener('scroll', startMusic);
+    });
+  }
+});
+
+// Members Names + Color Loop
+const members = [
+  "ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽",
+  "ᶦƬˢ⃝🎀🇲‌ᴇʜᴇᴅɪ﷽",
+  "ᶦƬˢ⃝🎀🇷‌ᴀʏʜᴀɴ﷽",
+  "ᶦƬˢ⃝🎀🇸‌ʜᴀᴡᴏɴ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴋʀᴀᴍ﷽",
+  "ᶦƬˢ⃝🎀🇨‌ʀᴜsʜ﷽",
+  "ᶦƬˢ⃝🎀🇭‌ʀɪᴅᴏʏ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴍʀᴀɴ﷽"
+];
+const colors = ["#ff0000","#00ff00","#00ffff","#ff00ff","#ffff00","#ff8800","#ffffff","#00ffff"];
+let i = 0;
+function showName(){
+    const nameDiv = document.getElementById("from-name");
+    nameDiv.innerText = "— " + members[i];
+    nameDiv.style.color = colors[i % colors.length];
+    i++;
+    if(i >= members.length) i = 0;
+}
+setInterval(showName, 3000);
+</script>
+
+</body>
+</html>  line-height:1.8;
   text-align: justify;
   color: #ffffff;
   text-shadow: 0 0 5px #00ffff, 0 0 10px #ff00ff;
