@@ -17,6 +17,7 @@ body{
 .container{
   text-align:center;
   z-index:2;
+  max-width: 800px;
 }
 h1{
   color: gold;
@@ -25,16 +26,92 @@ h1{
 }
 p{
   color: white;
-  font-size: 22px;
-  margin-top: 10px;
+  font-size: 20px;
+  line-height:1.6;
+  margin-top: 15px;
+  text-align: justify;
 }
-.from{
+#from-name{
   color:#00ffcc;
-  font-size:20px;
-  margin-top:15px;
+  font-size:22px;
+  margin-top:20px;
 }
 button{
   margin-top:20px;
+  padding:10px 20px;
+  font-size:18px;
+  background: #ffcc00;
+  border: none;
+  border-radius:8px;
+  cursor:pointer;
+  animation: glowBtn 2s infinite alternate;
+}
+@keyframes glow{
+  from{ text-shadow:0 0 10px gold; }
+  to{ text-shadow:0 0 30px red, 0 0 60px yellow; }
+}
+@keyframes glowBtn{
+  from{ box-shadow: 0 0 5px #ffcc00; }
+  to{ box-shadow: 0 0 20px #ff0000; }
+}
+.firework{
+  position:absolute;
+  width:6px;
+  height:6px;
+  animation: explode 1.5s infinite;
+}
+@keyframes explode{
+  0%{ box-shadow:none; }
+  100%{
+    box-shadow:
+    0 -120px red,
+    85px -85px yellow,
+    120px 0 cyan,
+    85px 85px lime,
+    0 120px magenta,
+    -85px 85px orange,
+    -120px 0 white,
+    -85px -85px pink;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎉 শুভ নববর্ষ ২০২৬ 🎉</h1>
+  <p>
+    আসসালামু ওয়ালাইকুম ITS Grouper সকল মেম্বারদের জানাই নতুন বছরের শুভেচ্ছা।<br>
+    নতুন বছর টা শুরু হওক সবার হাসি, খুশি, মায়া, মমতা আর ভালোবাসা দিয়ে।<br>
+    আসুন আমরা সবাই একসাথে মিলেমিশে নতুন বছর টা শুরু করি।<br>
+    ITS গ্রুপের সবাইকে জানাই প্রাণভরা মায়া আর ভালোবাসা।<br>
+    আমরা যেনো নতুন বছরে নতুন কিছু শিখতে পারি।
+  </p>
+  <div id="from-name">— জীবন খান</div>
+  <button onclick="document.getElementById('bgMusic').play()">🎵 Play Music</button>
+</div>
+
+<div class="firework"></div>
+
+<!-- Music -->
+<audio id="bgMusic" loop>
+  <source src="yourSong.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// ৭ জনের নাম
+const members = ["জীবন", "তারেক", "রাশিদা", "সুমন", "নাফিসা", "সাবের", "আলী"];
+let i = 0;
+function showName(){
+    document.getElementById("from-name").innerText = "— " + members[i];
+    i++;
+    if(i >= members.length) i = 0; // loop
+}
+setInterval(showName, 3000); // প্রতি ৩ সেকেন্ডে নাম পরিবর্তন
+</script>
+
+</body>
+</html>  margin-top:20px;
   padding:10px 20px;
   font-size:18px;
   background: #ffcc00;
