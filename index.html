@@ -128,6 +128,104 @@ function showName(){
   i++;
   if(i >= members.length) i = 0;
 }
+setInterval(showName, 2000);
+</script>
+
+</body>
+</html>  font-size:20px;
+  line-height:1.8;
+  color:#ffffff;
+  text-shadow:0 0 8px #00ffff,0 0 15px #ff00ff;
+}
+#from-name{
+  font-size:30px;
+  font-weight:bold;
+  margin-top:25px;
+  text-shadow:0 0 15px #ff69b4,0 0 30px #00ffff,0 0 45px #ffff00;
+  transition: all 1s ease;
+}
+.credit{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  font-size:20px;
+  font-weight:bold;
+  color:#00ffff;
+  text-shadow:0 0 8px #00ffff,0 0 15px #ff00ff,0 0 25px #00ffff;
+  animation: glowFooter 2s infinite alternate;
+}
+.firework{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  animation: explode 2s infinite;
+  top:50%; left:50%;
+}
+@keyframes glowText{
+  0%{ text-shadow:0 0 20px #FFD700,0 0 40px #FF4500,0 0 60px #FF69B4; }
+  50%{ text-shadow:0 0 25px #00ffff,0 0 50px #ff00ff,0 0 70px #ffff00; }
+  100%{ text-shadow:0 0 30px #ffcc00,0 0 60px #ff4500,0 0 90px #ffffff; }
+}
+@keyframes glowFooter{
+  0%{ text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff; color:#00ffff;}
+  50%{ text-shadow:0 0 15px #ff69b4,0 0 30px #ffff00,0 0 45px #00ff00; color:#ff69b4;}
+  100%{ text-shadow:0 0 20px #ffcc00,0 0 40px #ff4500,0 0 60px #ffffff; color:#ffcc00;}
+}
+@keyframes explode{
+  0%{ box-shadow:none; }
+  100%{
+    box-shadow:
+    0 -180px red,
+    120px -120px yellow,
+    180px 0 cyan,
+    120px 120px lime,
+    0 180px magenta,
+    -120px 120px orange,
+    -180px 0 white,
+    -120px -120px pink;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎉 Happy New Year 2026 🎉</h1>
+  <p>
+    ✨ Assalamu Alaikum ITS Grouper সকল মেম্বারদের জানাই নতুন বছরের শুভেচ্ছা।<br>
+    🌟 নতুন বছর টা শুরু হওক সবার হাসি, খুশি, মায়া, মমতা আর ভালোবাসা দিয়ে।<br>
+    💖 আসুন আমরা সবাই একসাথে মিলেমিশে নতুন বছর টা শুরু করি।<br>
+    🎀 ITS গ্রুপের সবাইকে জানাই প্রাণভরা মায়া আর ভালোবাসা।<br>
+    📚 আমরা যেনো নতুন বছরে নতুন কিছু শিখতে পারি।
+  </p>
+  <div id="from-name">— ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽</div>
+</div>
+
+<div class="firework"></div>
+<div class="credit">CRATER BY DX JIBON</div>
+
+<script>
+// Name Loop
+const members = [
+  "ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽",
+  "ᶦƬˢ⃝🎀🇲‌ᴇʜᴇᴅɪ﷽",
+  "ᶦƬˢ⃝🎀🇷‌ᴀʏʜᴀɴ﷽",
+  "ᶦƬˢ⃝🎀🇸‌ʜᴀᴡᴏɴ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴋʀᴀᴍ﷽",
+  "ᶦƬˢ⃝🎀🇨‌ʀᴜsʜ﷽",
+  "ᶦƬˢ⃝🎀🇭‌ʀɪᴅᴏʏ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴍʀᴀɴ﷽"
+];
+const colors = ["#ff0000","#00ff00","#00ffff","#ff00ff","#ffff00","#ff8800","#ffffff","#00ffff"];
+let i = 0;
+function showName(){
+  const nameDiv = document.getElementById("from-name");
+  nameDiv.innerText = "— " + members[i];
+  nameDiv.style.color = colors[i % colors.length];
+  i++;
+  if(i >= members.length) i = 0;
+}
 setInterval(showName, 2000); // faster loop
 </script>
 
