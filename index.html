@@ -9,7 +9,7 @@ body{
   margin:0;
   padding:0;
   height:100vh;
-  background: linear-gradient(135deg, #1a1a1a, #000000);
+  background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
   font-family: 'Gemunu Libre', sans-serif;
   overflow:hidden;
   color:white;
@@ -19,22 +19,136 @@ body{
   max-width:900px;
   margin:auto;
   padding:30px;
-  background: rgba(0,0,0,0.6);
+  background: rgba(0,0,0,0.4);
   border-radius:20px;
-  box-shadow: 0 0 30px #ffcc00, 0 0 60px #ff0000;
+  box-shadow: 0 0 50px #FFD700, 0 0 100px #FF4500 inset;
   position:relative;
   top:50%;
   transform: translateY(-50%);
 }
 h1{
   font-size:55px;
-  color:#FFD700;
   margin-bottom:20px;
-  text-shadow:0 0 10px #FFD700,0 0 20px #FF4500;
+  color:#FFD700;
+  text-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500, 0 0 35px #FF69B4;
   animation: glowText 2s infinite alternate;
 }
 p{
   font-size:20px;
+  line-height:1.8;
+  color:#ffffff;
+  text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff;
+}
+#from-name{
+  font-size:28px;
+  font-weight:bold;
+  margin-top:20px;
+  text-shadow:0 0 10px #ff69b4,0 0 20px #00ffff,0 0 30px #ffff00;
+}
+.credit{
+  position:absolute;
+  right:20px;
+  bottom:20px;
+  font-size:18px;
+  font-weight:bold;
+  color:#00ffff;
+  text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff;
+  animation: glowFooter 2s infinite alternate;
+}
+.firework{
+  position:absolute;
+  width:6px;
+  height:6px;
+  animation: explode 1.5s infinite;
+  top:50%; left:50%;
+}
+@keyframes glowText{
+  0%{ text-shadow:0 0 15px #FFD700,0 0 25px #FF4500,0 0 35px #FF69B4; }
+  50%{ text-shadow:0 0 20px #00ffff,0 0 35px #ff00ff,0 0 45px #ffff00; }
+  100%{ text-shadow:0 0 25px #ffcc00,0 0 40px #ff4500,0 0 55px #ffffff; }
+}
+@keyframes glowFooter{
+  0%{ text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff; color:#00ffff;}
+  50%{ text-shadow:0 0 10px #ff69b4,0 0 20px #ffff00,0 0 30px #00ff00; color:#ff69b4;}
+  100%{ text-shadow:0 0 15px #ffcc00,0 0 30px #ff4500,0 0 40px #ffffff; color:#ffcc00;}
+}
+@keyframes explode{
+  0%{ box-shadow:none; }
+  100%{
+    box-shadow:
+    0 -150px red,
+    100px -100px yellow,
+    150px 0 cyan,
+    100px 100px lime,
+    0 150px magenta,
+    -100px 100px orange,
+    -150px 0 white,
+    -100px -100px pink;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>🎉 Happy New Year 2026 🎉</h1>
+  <p>
+    ✨ Assalamu Alaikum ITS Grouper সকল মেম্বারদের জানাই নতুন বছরের শুভেচ্ছা।<br>
+    🌟 নতুন বছর টা শুরু হওক সবার হাসি, খুশি, মায়া, মমতা আর ভালোবাসা দিয়ে।<br>
+    💖 আসুন আমরা সবাই একসাথে মিলেমিশে নতুন বছর টা শুরু করি।<br>
+    🎀 ITS গ্রুপের সবাইকে জানাই প্রাণভরা মায়া আর ভালোবাসা।<br>
+    📚 আমরা যেনো নতুন বছরে নতুন কিছু শিখতে পারি।
+  </p>
+  <div id="from-name">— ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽</div>
+</div>
+
+<div class="firework"></div>
+<div class="credit">CRATER BY DX JIBON</div>
+
+<audio id="bgMusic" loop style="display:none">
+  <source src="yourSong.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Auto-play music on load
+window.addEventListener('load', function() {
+  const audio = document.getElementById('bgMusic');
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      // fallback: play on first scroll or click
+      const startMusic = () => { audio.play(); window.removeEventListener('click', startMusic); window.removeEventListener('scroll', startMusic); };
+      window.addEventListener('click', startMusic);
+      window.addEventListener('scroll', startMusic);
+    });
+  }
+});
+
+// Members Names + Color Loop
+const members = [
+  "ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽",
+  "ᶦƬˢ⃝🎀🇲‌ᴇʜᴇᴅɪ﷽",
+  "ᶦƬˢ⃝🎀🇷‌ᴀʏʜᴀɴ﷽",
+  "ᶦƬˢ⃝🎀🇸‌ʜᴀᴡᴏɴ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴋʀᴀᴍ﷽",
+  "ᶦƬˢ⃝🎀🇨‌ʀᴜsʜ﷽",
+  "ᶦƬˢ⃝🎀🇭‌ʀɪᴅᴏʏ﷽",
+  "ᶦƬˢ⃝🎀🇮‌ᴍʀᴀɴ﷽"
+];
+const colors = ["#ff0000","#00ff00","#00ffff","#ff00ff","#ffff00","#ff8800","#ffffff","#00ffff"];
+let i = 0;
+function showName(){
+    const nameDiv = document.getElementById("from-name");
+    nameDiv.innerText = "— " + members[i];
+    nameDiv.style.color = colors[i % colors.length];
+    i++;
+    if(i >= members.length) i = 0;
+}
+setInterval(showName, 3000);
+</script>
+
+</body>
+</html>  font-size:20px;
   line-height:1.8;
   text-align:justify;
   color:#ffffff;
