@@ -11,7 +11,7 @@ padding:0;
 height:100vh;
 background:#0d0d0d;
 font-family:'Gemunu Libre',sans-serif;
-overflow:hidden;
+overflow:auto;
 color:white;
 }
 .container{
@@ -28,13 +28,120 @@ transform:translateY(-50%);
 }
 h1{
 font-size:48px;
-margin-bottom:25px;
+margin-bottom:20px;
 color:#FFD700;
 text-shadow:0 0 20px #FFD700,0 0 40px #FF4500,0 0 60px #FF69B4;
 animation:glowText 1.5s infinite alternate;
 }
 p{
 font-size:17px;
+line-height:1.45;
+color:#ffffff;
+text-shadow:0 0 8px #00ffff,0 0 15px #ff00ff;
+}
+#from-name{
+font-size:24px;
+font-weight:bold;
+margin-top:20px;
+text-shadow:0 0 15px #ff69b4,0 0 30px #00ffff,0 0 45px #ffff00;
+transition:all 1s ease;
+}
+.credit{
+position:absolute;
+right:15px;
+bottom:15px;
+font-size:16px;
+font-weight:bold;
+color:#00ffff;
+text-shadow:0 0 8px #00ffff,0 0 15px #ff00ff,0 0 25px #00ffff;
+animation:glowFooter 2s infinite alternate;
+}
+.particle{
+position:absolute;
+width:5px;
+height:5px;
+background:#fff;
+border-radius:50%;
+opacity:0.8;
+animation:sparkle 3s infinite;
+}
+@keyframes glowText{
+0%{text-shadow:0 0 20px #FFD700,0 0 40px #FF4500,0 0 60px #FF69B4;}
+50%{text-shadow:0 0 25px #00ffff,0 0 50px #ff00ff,0 0 70px #ffff00;}
+100%{text-shadow:0 0 30px #ffcc00,0 0 60px #ff4500,0 0 90px #ffffff;}
+}
+@keyframes glowFooter{
+0%{text-shadow:0 0 5px #00ffff,0 0 10px #ff00ff,0 0 20px #00ffff;}
+50%{text-shadow:0 0 15px #ff69b4,0 0 30px #ffff00,0 0 45px #00ff00;}
+100%{text-shadow:0 0 20px #ffcc00,0 0 40px #ff4500,0 0 60px #ffffff;}
+}
+@keyframes sparkle{
+0%{transform:translate(0,0) scale(1);opacity:1;}
+50%{transform:translate(var(--x),var(--y)) scale(1.5);opacity:0.5;}
+100%{transform:translate(0,0) scale(1);opacity:0;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+<h1>🎊✨ Happy New Year 2026 ✨🎊</h1>
+
+<p>
+🌙✨ <b>আসসালামু আলাইকুম</b> ✨🌙<br>
+🎊🎉 সবাইকে জানাই <b>Happy New Year 2026</b> 🎉🎊<br>
+💖 আমাদের প্রিয় Likee ফ্যামিলি<br>
+👉 <b>ITS LOVE FAMILY</b> 👈 🤝<br>
+🤲 আল্লাহ তায়ালা যেন আমাদের সবার জীবনে<br>
+😊 সুখ 🕊️ শান্তি 💪 সুস্থতা 🌸 আর অফুরন্ত বরকত দান করেন<br>
+❤️ ২০২৬ সালে আমরা সবাই একে অপরের পাশে থাকি<br>
+🤍 ভালোবাসা 🤝 সম্মান 🔒 বিশ্বাসে<br>
+মিলে মিশে <b>একটা পরিবার, একটা পেজ</b> হয়ে থাকি ✨<br>
+🌟 সম্পর্কগুলো যেন আরও সুন্দর হয়<br>
+🌟 ভুল বোঝাবুঝি দূরে থাকে<br>
+🌟 <b>ITS LOVE FAMILY</b> সবসময় একসাথে থাকে<br>
+🤍🤍 দোয়া ও ভালোবাসা রইলো সবার জন্য 🤍🤍
+</p>
+
+<div id="from-name">— ITS LOVE FAMILY</div>
+</div>
+
+<div class="credit">CREATED BY DX JIBON</div>
+
+<script>
+const members=[
+"ᶦƬˢ⃝🎀🇽‌ᴀᴛᴋᴀ﷽",
+"ᶦƬˢ⃝🎀🇲‌ᴇʜᴇᴅɪ﷽",
+"ᶦƬˢ⃝🎀🇷‌ᴀʏʜᴀɴ﷽",
+"ᶦƬˢ⃝🎀🇸‌ʜᴀᴡᴏɴ﷽",
+"ᶦƬˢ⃝🎀🇮‌ᴋʀᴀᴍ﷽",
+"ᶦƬˢ⃝🎀🇨‌ʀᴜsʜ﷽",
+"ᶦƬˢ⃝🎀🇭‌ʀɪᴅᴏʏ﷽",
+"ᶦƬˢ⃝🎀🇮‌ᴍʀᴀɴ﷽"
+];
+const colors=["#ff0000","#00ff00","#00ffff","#ff00ff","#ffff00","#ff8800","#ffffff","#00ffff"];
+let i=0;
+function showName(){
+const nameDiv=document.getElementById("from-name");
+nameDiv.innerText="— "+members[i];
+nameDiv.style.color=colors[i%colors.length];
+i++; if(i>=members.length)i=0;
+}
+setInterval(showName,2000);
+
+for(let j=0;j<50;j++){
+const p=document.createElement('div');
+p.className='particle';
+const x=Math.random()*window.innerWidth-window.innerWidth/2+'px';
+const y=Math.random()*window.innerHeight-window.innerHeight/2+'px';
+p.style.setProperty('--x',x);
+p.style.setProperty('--y',y);
+document.body.appendChild(p);
+}
+</script>
+
+</body>
+</html>font-size:17px;
 line-height:1.9;
 color:#ffffff;
 text-shadow:0 0 8px #00ffff,0 0 15px #ff00ff;
